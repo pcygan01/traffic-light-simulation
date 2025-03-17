@@ -1,0 +1,308 @@
+.intersection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+}
+
+.intersection {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #2c3e50;
+  margin: 20px auto;
+}
+
+.road {
+  position: absolute;
+  background-color: #95a5a6;
+}
+
+.road-horizontal {
+  width: 100%;
+  height: 80px;
+  top: 160px;
+}
+
+.road-vertical {
+  width: 80px;
+  height: 100%;
+  left: 160px;
+}
+
+.lane-marker {
+  position: absolute;
+  background-color: white;
+}
+
+.lane-marker-horizontal {
+  width: 30px;
+  height: 2px;
+  top: 199px;
+}
+
+.lane-marker-vertical {
+  width: 2px;
+  height: 30px;
+  left: 199px;
+}
+
+.traffic-light {
+  position: absolute;
+  width: 20px;
+  height: 60px;
+  background-color: #7f8c8d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.traffic-light-north {
+  top: 20px;
+  left: 200px;
+}
+
+.traffic-light-south {
+  bottom: 20px;
+  left: 200px;
+}
+
+.traffic-light-east {
+  top: 200px;
+  right: 20px;
+}
+
+.traffic-light-west {
+  top: 200px;
+  left: 20px;
+}
+
+.light {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #7f8c8d;
+}
+
+.light-red {
+  background-color: #e74c3c;
+}
+
+.light-green {
+  background-color: #2ecc71;
+}
+
+.label {
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.label-north {
+  top: 10px;
+  left: 195px;
+}
+
+.label-south {
+  bottom: 10px;
+  left: 195px;
+}
+
+.label-east {
+  top: 190px;
+  right: 10px;
+}
+
+.label-west {
+  top: 190px;
+  left: 10px;
+}
+
+.vehicle {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.vehicle-label {
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle-status {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle-status.waiting {
+  background-color: rgba(255, 165, 0, 0.7);
+  animation: pulse 1s infinite alternate;
+}
+
+.vehicle-status.moving {
+  background-color: rgba(46, 204, 113, 0.7);
+}
+
+/* Stan zablokowany pojazdu */
+.vehicle-blocked {
+  box-shadow: 0 0 8px 2px orange;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Kolory pojazdów w zależności od kierunku skrętu */
+.vehicle-turning-left {
+  background-color: #e74c3c; /* czerwony dla skręcających w lewo */
+}
+
+.vehicle-turning-right {
+  background-color: #2ecc71; /* zielony dla skręcających w prawo */
+}
+
+.vehicle-going-straight {
+  background-color: #3498db; /* niebieski dla jadących prosto */
+}
+
+/* Pozycje pojazdów dla różnych kierunków */
+.vehicle-north {
+  bottom: 80px;  /* Dolna krawędź drogi północnej */
+  left: 175px;   /* Środek pasa ruchu północnego */
+}
+
+.vehicle-south {
+  top: 80px;     /* Górna krawędź drogi południowej */
+  left: 205px;   /* Środek pasa ruchu południowego */
+}
+
+.vehicle-east {
+  left: 80px;    /* Lewa krawędź drogi wschodniej */
+  top: 205px;    /* Środek pasa ruchu wschodniego */
+}
+
+.vehicle-west {
+  right: 80px;   /* Prawa krawędź drogi zachodniej */
+  top: 175px;    /* Środek pasa ruchu zachodniego */
+}
+
+/* Animacje ruchu pojazdów */
+.vehicle-moving-north {
+  animation: moveNorth 2s ease-in-out;
+}
+
+.vehicle-moving-south {
+  animation: moveSouth 2s ease-in-out;
+}
+
+.vehicle-moving-east {
+  animation: moveEast 2s ease-in-out;
+}
+
+.vehicle-moving-west {
+  animation: moveWest 2s ease-in-out;
+}
+
+@keyframes moveNorth {
+  0% { transform: translateY(50px); }
+  100% { transform: translateY(-50px); }
+}
+
+@keyframes moveSouth {
+  0% { transform: translateY(-50px); }
+  100% { transform: translateY(50px); }
+}
+
+@keyframes moveEast {
+  0% { transform: translateX(-50px); }
+  100% { transform: translateX(50px); }
+}
+
+@keyframes moveWest {
+  0% { transform: translateX(50px); }
+  100% { transform: translateX(-50px); }
+}
+
+.vehicle-counter {
+  position: absolute;
+  background-color: rgba(44, 62, 80, 0.9);
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  z-index: 50;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  border: 2px solid #95a5a6;
+  min-width: 60px;
+  transition: transform 0.2s ease;
+}
+
+.vehicle-counter:hover {
+  transform: scale(1.05);
+}
+
+.counter-value {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.counter-label {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.vehicle-counter-north {
+  top: 30px;
+  left: 200px;
+  transform: translateX(-50%);
+}
+
+.vehicle-counter-south {
+  bottom: 30px;
+  left: 200px;
+  transform: translateX(-50%);
+}
+
+.vehicle-counter-east {
+  right: 30px;
+  top: 200px;
+  transform: translateY(-50%);
+}
+
+.vehicle-counter-west {
+  left: 30px;
+  top: 200px;
+  transform: translateY(-50%);
+} 

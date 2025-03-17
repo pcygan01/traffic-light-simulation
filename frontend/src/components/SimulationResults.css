@@ -1,0 +1,88 @@
+.simulation-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.results-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.waiting-vehicles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.waiting-vehicle-count {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 120px;
+}
+
+.direction {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.count {
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.step-results {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.step-result {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.step-result:last-child {
+  border-bottom: none;
+}
+
+.step-result h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #3498db;
+}
+
+.vehicles-left {
+  margin-top: 10px;
+}
+
+.vehicles-left ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.no-vehicles {
+  font-style: italic;
+  color: #999;
+  margin-left: 10px;
+} 

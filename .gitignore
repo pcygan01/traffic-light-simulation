@@ -1,0 +1,48 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.gradle/
+build/
+target/
+
+# Spring Boot
+application*.yml
+application*.properties
+!application.properties
+!application.yml
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logi i pliki tymczasowe
+logs/
+*.log
+*.tmp
+*.temp
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Pliki konfiguracyjne
+.env
+*.env 
