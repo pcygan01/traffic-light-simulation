@@ -26,7 +26,7 @@ echo Input file: %INPUT_FILE%
 echo Output file: %OUTPUT_FILE%
 
 REM Uruchom aplikację Java z podanymi argumentami
-java -jar backend\target\traffic-light-simulation-0.0.1-SNAPSHOT.jar "%INPUT_FILE%" "%OUTPUT_FILE%"
+java -jar backend\target\traffic-light-simulation-1.0.0.jar "%INPUT_FILE%" "%OUTPUT_FILE%"
 
 REM Sprawdź kod wyjścia
 if %ERRORLEVEL% EQU 0 (

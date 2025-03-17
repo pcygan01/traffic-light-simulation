@@ -81,6 +81,7 @@ Where:
 The application can also be run as a web service with a visual interface:
 
 ```bash
+cd backend
 mvn spring-boot:run
 ```
 
@@ -165,9 +166,13 @@ The simulation produces a JSON output file with results for each step:
 
 ## Building the Project
 
-Build using Maven:
+To build the Java backend:
 
 ```bash
+# Navigate to the backend directory
+cd backend
+
+# Build the project with Maven
 mvn clean package
 ```
 
@@ -189,6 +194,4 @@ The executable JAR will be available in `backend/target/`.
 
 ## Author
 
-Piotr Cygan
-
-Po zbudowaniu, plik JAR będzie dostępny w katalogu `backend/target/`. 
+Piotr Cygan 
