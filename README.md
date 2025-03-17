@@ -69,7 +69,7 @@ Run the simulation from the command line to process JSON input files:
 
 **Windows:**
 ```bash
-simulation.bat input.json output.json
+.\simulation.bat input.json output.json
 ```
 
 Where:
@@ -85,6 +85,37 @@ mvn spring-boot:run
 ```
 
 Then access the application at `http://localhost:8080`
+
+### Local Development
+
+To run the application locally for development:
+
+1. **Install dependencies**:
+   ```bash
+   # In the root directory
+   npm install
+
+   # In the backend directory
+   cd backend
+   npm install
+   
+   # In the frontend directory
+   cd frontend
+   npm install
+   ```
+
+2. **Start the application**:
+   ```bash
+   # Run from the root directory to start both frontend and backend
+   npm start
+   ```
+
+   This will start:
+   - The backend server on port 8080
+   - The frontend development server on port 3000
+
+3. **Access the application**:
+   Open your browser and navigate to `http://localhost:3000`
 
 ## Input File Format
 
