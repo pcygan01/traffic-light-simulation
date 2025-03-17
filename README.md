@@ -93,21 +93,22 @@ To run the application locally for development:
 
 1. **Install dependencies**:
    ```bash
-   # In the root directory
-   npm install
-
-   # In the backend directory
-   cd backend
-   npm install
-   
    # In the frontend directory
    cd frontend
    npm install
+   cd ..
    ```
 
 2. **Start the application**:
    ```bash
-   # Run from the root directory to start both frontend and backend
+   # Start the backend (Spring Boot)
+   cd backend
+   mvn spring-boot:run
+   ```
+
+   ```bash
+   # In a separate terminal, start the frontend
+   cd frontend
    npm start
    ```
 
@@ -177,6 +178,18 @@ mvn clean package
 ```
 
 The executable JAR will be available in `backend/target/`.
+
+### Running Tests
+
+To run the unit tests:
+
+```bash
+# Navigate to the backend directory
+cd backend
+
+# Execute tests with Maven
+mvn test
+```
 
 ## Technologies
 
