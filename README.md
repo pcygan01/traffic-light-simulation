@@ -15,20 +15,20 @@ This project simulates traffic flow at a standard intersection with four incomin
 
 Here are views of the application in action:
 
-![Traffic Simulation Interface](https://github.com/user-attachments/assets/fdd8912c-c150-4321-baa5-b5ec9b4f0810)
-*Main simulation interface showing the intersection with traffic lights*
+![Main Interface](https://github.com/user-attachments/assets/fdd8912c-c150-4321-baa5-b5ec9b4f0810)
+*Control panel with simulation options*
 
-![Vehicle Addition](https://github.com/user-attachments/assets/2a3894d9-229e-4efb-bb36-5e8cce9d7fdf)
-*Adding vehicles to the simulation with route selection*
+![Vehicle Management](https://github.com/user-attachments/assets/2a3894d9-229e-4efb-bb36-5e8cce9d7fdf)
+*Adding vehicles with route selection*
 
-![Simulation Visualization](https://github.com/user-attachments/assets/9f214175-8145-45d2-a294-bad081374412)
-*Visualization of vehicles moving through the intersection*
+![Simulation Controls](https://github.com/user-attachments/assets/9f214175-8145-45d2-a294-bad081374412)
+*Vehicle tracking interface*
 
-![JSON Results](https://github.com/user-attachments/assets/69971246-0e66-4062-995f-81ed5be0fb98)
-*JSON output showing simulation results*
+![Results View](https://github.com/user-attachments/assets/69971246-0e66-4062-995f-81ed5be0fb98)
+*Simulation steps and statistics*
 
-![Traffic Flow Analysis](https://github.com/user-attachments/assets/6634ef36-5fae-45ed-b790-afd9f3ad47cf)
-*Analysis of traffic flow through the intersection*
+![Step Details](https://github.com/user-attachments/assets/6634ef36-5fae-45ed-b790-afd9f3ad47cf)
+*Vehicles leaving in each simulation step*
 
 ## Features
 
