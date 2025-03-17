@@ -76,6 +76,8 @@ Where:
 - `input.json` - Path to input file with simulation commands
 - `output.json` - Path where simulation results will be saved
 
+> **Note:** Before running the simulation with the command line scripts, you must first build the project with `cd backend` and `mvn clean package` to create the necessary JAR file and then leave to main directory using `cd ..`.
+
 ### Web Interface
 
 The application can also be run as a web service with a visual interface:
