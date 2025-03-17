@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './JsonDisplay.css';
 
 const JsonDisplay = ({ jsonData }) => {
-  // Domyślnie rozwinięty
   const [isExpanded, setIsExpanded] = useState(true);
 
   if (!jsonData) {
@@ -16,12 +15,12 @@ const JsonDisplay = ({ jsonData }) => {
   return (
     <div className="json-display">
       <div className="json-header">
-        <h3>Wyniki symulacji w formacie JSON</h3>
+        <h3>Simulation results in JSON format</h3>
         <button 
           className="toggle-button" 
           onClick={toggleExpand}
         >
-          {isExpanded ? 'Zwiń' : 'Rozwiń'}
+          {isExpanded ? 'Collapse' : 'Expand'}
         </button>
       </div>
       {isExpanded && (

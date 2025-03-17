@@ -7,6 +7,7 @@ import JsonDisplay from './components/JsonDisplay';
 import SimulationService from './services/SimulationService';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [trafficLights, setTrafficLights] = useState({
     NORTH: { direction: 'NORTH', mainState: 'GREEN', rightTurnArrow: false },
     SOUTH: { direction: 'SOUTH', mainState: 'GREEN', rightTurnArrow: false },
@@ -14,7 +15,9 @@ function App() {
     WEST: { direction: 'WEST', mainState: 'RED', rightTurnArrow: false }
   });
   
+  // eslint-disable-next-line no-unused-vars
   const [vehicles, setVehicles] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [waitingVehicleCounts, setWaitingVehicleCounts] = useState({
     NORTH: 0,
     SOUTH: 0,
@@ -25,6 +28,7 @@ function App() {
   const [simulationResults, setSimulationResults] = useState(null);
   const [isSimulationInitialized, setIsSimulationInitialized] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [currentSimulationStep, setCurrentSimulationStep] = useState(0);
   const [conditionalArrowsEnabled, setConditionalArrowsEnabled] = useState(false);
   
@@ -130,7 +134,7 @@ function App() {
     
     try {
       await SimulationService.setConditionalRightTurnArrowsEnabled(enabled);
-      console.log(`Warunkowe strzałki ${enabled ? 'włączone' : 'wyłączone'}`);
+      console.log(`Conditional arrows ${enabled ? 'enabled' : 'disabled'}`);
       
       await updateSimulationState();
     } catch (error) {
@@ -170,7 +174,7 @@ function App() {
       return 'RIGHT';
     }
     
-    console.warn(`Nierozpoznana kombinacja kierunków: ${start} -> ${end}, zakładam jazdę prosto`);
+    console.warn(`Unrecognized direction combination: ${start} -> ${end}, assuming straight movement`);
     return 'STRAIGHT';
   };
   
@@ -200,12 +204,12 @@ function App() {
   
   const updateIntersectionForStep = (stepIndex) => {
     if (!simulationResults || !simulationResults.stepStatuses || stepIndex >= simulationResults.stepStatuses.length) {
-      console.log("Brak danych symulacji lub nieprawidłowy indeks kroku");
+      console.log("No simulation data or invalid step index");
       return;
     }
     
     setCurrentSimulationStep(stepIndex);
-    console.log(`Aktualizacja wizualizacji dla kroku ${stepIndex+1}/${simulationResults.stepStatuses.length}`);
+    console.log(`Updating visualization for step ${stepIndex+1}/${simulationResults.stepStatuses.length}`);
     
     const vehicleDetails = {};
     if (simulationResults.rawJson) {
@@ -227,7 +231,7 @@ function App() {
           });
         }
       } catch (error) {
-        console.error("Błąd podczas analizy danych JSON:", error);
+        console.error("Error parsing JSON data:", error);
       }
     }
     
@@ -247,9 +251,9 @@ function App() {
       }
     });
     
-    console.log("Krok symulacji:", stepIndex + 1);
-    console.log("Pojazdy, które opuściły skrzyżowanie do tego kroku:", Array.from(exitedVehicles));
-    console.log("Liczniki pojazdów pozostałych na skrzyżowaniu:", vehicleCountsByDirection);
+    console.log("Simulation step:", stepIndex + 1);
+    console.log("Vehicles that left the intersection up to this step:", Array.from(exitedVehicles));
+    console.log("Remaining vehicles at the intersection:", vehicleCountsByDirection);
     
     setWaitingVehicleCounts(vehicleCountsByDirection);
     
@@ -287,7 +291,7 @@ function App() {
           
           updatedLights[direction].rightTurnArrow = !anyStraight;
           
-          console.log(`${direction}: Warunkowa strzałka w prawo ${!anyStraight ? 'AKTYWNA' : 'nieaktywna'} (pojazdy z lewej jadące prosto: ${anyStraight ? 'TAK' : 'NIE'})`);
+          console.log(`${direction}: Conditional right turn arrow ${!anyStraight ? 'ACTIVE' : 'inactive'} (vehicles from the left going straight: ${anyStraight ? 'YES' : 'NO'})`);
         }
       });
     }
@@ -408,7 +412,6 @@ function App() {
         
         <SimulationResults 
           results={simulationResults}
-          waitingVehicles={waitingVehicleCounts}
         />
       </>
     );

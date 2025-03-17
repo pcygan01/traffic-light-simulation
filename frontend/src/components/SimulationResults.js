@@ -1,23 +1,9 @@
 import React from 'react';
 import './SimulationResults.css';
 
-const SimulationResults = ({ results, waitingVehicles }) => {
+const SimulationResults = ({ results }) => {
   return (
     <div className="simulation-results">
-      <div className="results-section">
-        <h3>Waiting Vehicles</h3>
-        {waitingVehicles && (
-          <div className="waiting-vehicles">
-            {Object.entries(waitingVehicles).map(([direction, count]) => (
-              <div key={direction} className="waiting-vehicle-count">
-                <span className="direction">{direction}:</span>
-                <span className="count">{count}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      
       {results && results.stepStatuses && (
         <div className="results-section">
           <h3>Simulation Results</h3>

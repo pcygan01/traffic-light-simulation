@@ -12,8 +12,8 @@ const SimulationVisualizer = ({ results, onStepChange }) => {
   useEffect(() => {
     console.log("SimulationVisualizer received results:", results);
     if (results && results.stepStatuses) {
-      console.log(`Znaleziono ${results.stepStatuses.length} kroków w wynikach symulacji`);
-      console.log("Pierwszy krok ma leftVehicles:", results.stepStatuses[0]?.leftVehicles);
+      console.log(`Found ${results.stepStatuses.length} steps in simulation results`);
+      console.log("First step has leftVehicles:", results.stepStatuses[0]?.leftVehicles);
       setCurrentStep(0);
       setIsAutoPlaying(false);
     }
@@ -21,7 +21,7 @@ const SimulationVisualizer = ({ results, onStepChange }) => {
   
   useEffect(() => {
     if (onStepChange) {
-      console.log(`SimulationVisualizer: zmiana kroku na ${currentStep}`);
+      console.log(`SimulationVisualizer: changing to step ${currentStep}`);
       
       onStepChange(currentStep);
     }
@@ -29,7 +29,7 @@ const SimulationVisualizer = ({ results, onStepChange }) => {
 
   useEffect(() => {
     if (isAutoPlaying && results && results.stepStatuses) {
-      console.log(`Auto-play uruchomiony, bieżący krok: ${currentStep}/${results.stepStatuses.length - 1}`);
+      console.log(`Auto-play started, current step: ${currentStep}/${results.stepStatuses.length - 1}`);
       
       if (autoPlayTimerRef.current) {
         clearInterval(autoPlayTimerRef.current);
@@ -39,17 +39,17 @@ const SimulationVisualizer = ({ results, onStepChange }) => {
         setCurrentStep(prevStep => {
           const nextStep = prevStep + 1;
           if (nextStep < results.stepStatuses.length) {
-            console.log(`Auto-play: przejście do kroku ${nextStep}`);
+            console.log(`Auto-play: moving to step ${nextStep}`);
             return nextStep;
           } else {
-            console.log(`Auto-play: osiągnięto koniec symulacji`);
+            console.log(`Auto-play: reached end of simulation`);
             setIsAutoPlaying(false);
             return prevStep;
           }
         });
       }, 2000);
     } else if (autoPlayTimerRef.current) {
-      console.log(`Auto-play zatrzymany`);
+      console.log(`Auto-play stopped`);
       clearInterval(autoPlayTimerRef.current);
       autoPlayTimerRef.current = null;
     }

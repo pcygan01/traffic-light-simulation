@@ -130,11 +130,11 @@ function Controls({
               checked={conditionalArrowsEnabled} 
               onChange={(e) => onToggleConditionalArrows(e.target.checked)} 
             />
-            Włącz warunkowy skręt w prawo
+            Enable conditional right turn
           </label>
           <div className="tooltip">
             <span className="tooltip-text">
-              Pozwala na skręt w prawo przy czerwonym świetle, jeśli pojazdy z lewej strony skręcają (nie jadą prosto)
+              Allows right turn on red light when vehicles from the left are turning (not going straight)
             </span>
             <span className="info-icon">?</span>
           </div>
@@ -211,11 +211,11 @@ function Controls({
               checked={conditionalArrowsEnabled} 
               onChange={(e) => onToggleConditionalArrows(e.target.checked)} 
             />
-            Włącz warunkowy skręt w prawo
+            Enable conditional right turn
           </label>
           <div className="tooltip">
             <span className="tooltip-text">
-              Pozwala na skręt w prawo przy czerwonym świetle, jeśli pojazdy z lewej strony skręcają (nie jadą prosto)
+              Allows right turn on red light when vehicles from the left are turning (not going straight)
             </span>
             <span className="info-icon">?</span>
           </div>

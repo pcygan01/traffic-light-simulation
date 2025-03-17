@@ -2,8 +2,6 @@
 
 A realistic simulation of a four-way intersection with intelligent traffic light control and conditional turn management.
 
-![Traffic Light Simulation](https://github.com/user-attachments/assets/27392bad-699d-4223-bf3f-4e7ce9cd2277)
-
 ## Overview
 
 This project simulates traffic flow at a standard intersection with four incoming roads. The simulation includes:
@@ -12,6 +10,25 @@ This project simulates traffic flow at a standard intersection with four incomin
 - Special handling for left-turning vehicles
 - Command line interface for batch processing
 - Web interface for visual interaction
+
+## Screenshots
+
+Here are views of the application in action:
+
+![Traffic Simulation Interface](https://github.com/user-attachments/assets/fdd8912c-c150-4321-baa5-b5ec9b4f0810)
+*Main simulation interface showing the intersection with traffic lights*
+
+![Vehicle Addition](https://github.com/user-attachments/assets/2a3894d9-229e-4efb-bb36-5e8cce9d7fdf)
+*Adding vehicles to the simulation with route selection*
+
+![Simulation Visualization](https://github.com/user-attachments/assets/9f214175-8145-45d2-a294-bad081374412)
+*Visualization of vehicles moving through the intersection*
+
+![JSON Results](https://github.com/user-attachments/assets/69971246-0e66-4062-995f-81ed5be0fb98)
+*JSON output showing simulation results*
+
+![Traffic Flow Analysis](https://github.com/user-attachments/assets/6634ef36-5fae-45ed-b790-afd9f3ad47cf)
+*Analysis of traffic flow through the intersection*
 
 ## Features
 
